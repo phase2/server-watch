@@ -54,7 +54,8 @@ This controls the output columns in the log file a sample configuration looks li
 
     > Format is a space delineated listing of the columns to appear in the output rows.
 
-The following fields are available for logging
+The following fields are available for logging:
+
 * 1: 1 minute Load
 * 2: 5 minute Load
 * 3: 15 minute Load

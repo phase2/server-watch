@@ -14,7 +14,7 @@ options = {
   'mysql': False, 
   'config': 'server-watch.config',
   'delimeter': '\t',
-  'delay': 0.0,
+  'delay': 1.0,
 }
 config = {}
 

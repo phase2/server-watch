@@ -14,7 +14,7 @@ options = {
   'mysql': False, 
   'config': 'server-watch.config',
   'delimeter': '\t',
-  'delay': 0,
+  'delay': 0.0,
 }
 config = {}
 
@@ -244,7 +244,8 @@ def main(args):
     outputRow(data)
     lines += 1
     
-    time.sleep(options['delay'])
+    # Subtract 1 b/c mpstat for getCPu already delays for 1 second
+    time.sleep(options['delay'] - 1)
 
 #
 # print usage
@@ -287,9 +288,17 @@ if __name__ == "__main__":
     elif o in ("-d", "--delimeter"):
       options['delimeter'] = a
     elif o in ("-s", "--seconds"):
-      options['delay'] = a
+      delay = float(a)
+      if delay >= 1.0:
+        options['delay'] = delay
+      else:
+        print 'Delay must be 1 second or greater'
+        sys.exit(2)
 
-  config = ConfigParser.SafeConfigParser({'format': '1 11 12 13'})
+  # Setup the parser and defaults
+  config = ConfigParser.RawConfigParser()
+  config.add_section('log')
+  config.set('log', 'format', '1 11 12 13')
   config.read(options['config'])  
 
   main(args)

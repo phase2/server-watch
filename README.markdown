@@ -17,7 +17,7 @@ This logs the desired values to stdout. Those can be redirected to a file as:
     
 There are a few command line options to customize the behavior
 
-* -c, --config <config file>
+* -c, --config < config file >
 
     > Specifies which config file to use
 
@@ -29,11 +29,11 @@ There are a few command line options to customize the behavior
 
     > Enable mysql monitoring
 
-* -d, --delimeter <delimeter>
+* -d, --delimeter < delimete r>
 
     > What string to use as a delimeter for the log file, defaults to a tab
 
-* -s, --seconds <delay>
+* -s, --seconds < delay >
 
     > How many seconds to delay b/w report rows, defaults to 1 second
 

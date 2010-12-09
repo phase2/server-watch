@@ -47,8 +47,8 @@ There are a few sections in the configuration file
 
 This controls the output columns in the log file a sample configuration looks like
 
-[log]
-format = 1 11 12 13
+    [log]
+    format = 1 11 12 13
 
 * format
 
@@ -84,10 +84,10 @@ The following fields are available for logging
 
 This controls the connection info to MySQL
 
-[mysql]
-host = localhost
-user = root
-password = root
+    [mysql]
+    host = localhost
+    user = root
+    password = root
 
 * host
 
